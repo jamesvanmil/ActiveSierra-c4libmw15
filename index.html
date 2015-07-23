@@ -176,11 +176,14 @@ The Liars' Club : a memoir  2015-07-01 18:46:25 UTC
 
           <section>
             <h2>SQL statement</h2>
-            <pre class="fragment"><code data-trim contenteditable>
+            <pre><code data-trim contenteditable>
 SELECT  "item_view".* FROM "item_view"
-INNER JOIN "item_record" ON "item_view"."id" = "item_record"."record_id" 
-INNER JOIN "bib_record_item_record_link" ON "item_record"."record_id" = "bib_record_item_record_link"."item_record_id" 
-INNER JOIN "bib_record" ON "bib_record_item_record_link"."bib_record_id" = "bib_record"."record_id" 
+INNER JOIN "item_record" 
+  ON "item_view"."id" = "item_record"."record_id" 
+INNER JOIN "bib_record_item_record_link" 
+  ON "item_record"."record_id" = "bib_record_item_record_link"."item_record_id" 
+INNER JOIN "bib_record" 
+  ON "bib_record_item_record_link"."bib_record_id" = "bib_record"."record_id" 
 WHERE "bib_record"."id" = $1  
 ORDER BY "item_view"."id" 
 ASC LIMIT 1  [["id", 420907795010]]
