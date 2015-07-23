@@ -187,13 +187,39 @@
 
           <section>
             <h2>Tricerashopper</h2>
+            <p>Content Services portal developed for acquisitions support. Web application includes expenditure reports, materials request form, and other utilities.</p>
             <p><a href="https://github.com/jamesvanmil/tricerashopper" target="_blank">https://github.com/jamesvanmil/tricerashopper</a></p>
           </section>
 
-          <section>
-            <h2>More about Tricerashopper...</h2>
+           <section data-markdown>
+            <script type="text/template">
+            <h2>Rake tasks to run reports</h2>
+            <p>Constructed activerecord calls to populate local database</p>
+            ```ruby
+            def dda_create(x)
+              if x.order_view.record_creation_date_gmt > fiscal_year_beginning(Time.now)
+                DdaExpenditure.create(
+                title: x.order_view.bib_view.title, 
+                paid: x.paid_amt,
+                fund: x.order_view.order_record_cmf.fund,
+                paid_date: x.order_view.record_creation_date_gmt
+                )
+              end
+            end
+            ```
+            </script>
           </section>
-        </section>
+        
+          <section>
+            <h2>Materials Request Form</h2>
+            <ul>
+              <li>Built-in Workflow status with notifications</li>
+              <li>MARC record export for brief bib and order loads</li>
+              <li>User accounts with roles and authorizations</li>
+            </ul>
+          </section>
+
+</section>
 
 				<section>
           <h2>Other ideas?</h2>
