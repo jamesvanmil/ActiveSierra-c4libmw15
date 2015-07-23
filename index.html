@@ -172,6 +172,13 @@ The shape of medieval monetary history  2013-08-19 18:39:25 UTC
 A kick in the head : an everyday guide to poetic forms  2014-02-27 16:49:27 UTC
 The Liars' Club : a memoir  2015-07-01 18:46:25 UTC
             </code></pre>
+
+            <p class="fragment">And to deal with the database timing out...</p>
+            <pre class="fragment"><code data-trim contenteditable>
+BibView.find_in_batches do |records|
+  records.each do { |r| r.foo }
+end
+            </code></pre>
           </section>
 
           <section>
