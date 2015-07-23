@@ -78,8 +78,18 @@
             <h1>ActiveRecord and ActiveModel</h1>
           </section>
 
-          <section>
-            <p>examples of basic active record calls<p>
+          <section data-markdown>
+            <script type="text/template">
+              ```ruby
+              User.first
+
+              User.where(name: 'James')
+
+              User.each do |user|
+                puts user.name
+              end
+              ```
+            </script>
           </section>
 
           <section>
