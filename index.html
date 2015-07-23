@@ -127,24 +127,25 @@
             <script type="text/template">
             <h2>ActiveSierra calls</h2>
             ```ruby
-            2.1.0 :005 > VarfieldView.last
+            > VarfieldView.last
              => #<VarfieldView id: 108526768, record_id: 450976600050, 
                    record_type_code: "i", record_num: 5033970, 
                    varfield_type_code: "m", marc_tag: nil, marc_ind1: " ", 
                    marc_ind2: " ", occ_num: 0, 
                    field_content: "Wed Jul 22 2015 08:34PM: IN TRANSIT from ulastud to...">
             
-            2.1.0 :007 > BibView.last
-             => #<BibView id: 420912820023, record_type_code: "b", 
-                   record_num: 6025015, language_code: "eng", bcode1: "m", 
-                   bcode2: "a", bcode3: "d", country_code: "cau", 
-                   is_available_at_library: false, index_change_count: 3, 
-                   allocation_rule_code: nil, is_on_course_reserve: false, 
-                   is_right_result_exact: false, skip_num: 0, 
-                   cataloging_date_gmt: "2015-07-22 04:00:00", marc_type_code: " ", 
-                   title: "Crush : a novel", record_creation_date_gmt: "2015-07-22 21:00:19">             
-
-```
+            > BibView.limit(10).each { |b| puts b.title }
+            The day in Bohemia or Life among the artists. Being a jeu d'esprit containing much that is original and diverting.
+            Spinoza now
+            The shape of medieval monetary history
+            A kick in the head : an everyday guide to poetic forms
+            The Liars' Club : a memoir
+            Hooray for Amanda & her alligator!
+            Accessions list, South Asia
+            Multinational enterprises and employment  : the Canadian experience
+            Origine et préhistoire du langage.
+            Trace elements from soil to human
+            ```
             </script>
           </section>
 
@@ -160,7 +161,7 @@
             ORDER BY "item_view"."id" 
             ASC LIMIT 1  [["id", 420907795010]]
             ```
-<p>becomes ...</p>
+            <p>becomes ...</p>
           </script>
           </section>
           <section data-markdown>
